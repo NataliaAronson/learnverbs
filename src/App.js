@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React,{ useEffect } from 'react'
 import TodoList from './Todo/TodoList'
 import Context from './context'
 import Loader from './Loader'
@@ -56,7 +56,9 @@ function App() {
   return (
     <Context.Provider value={{ removeTodo }}>
       <div className='wrapper'>
-    <Card>
+    <Card
+    frontSide = "делать"
+    backSide ="do, did, done">
     </Card>
 
         <h2> My vocabulary list</h2>
