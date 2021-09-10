@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import TodoList from './Todo/TodoList'
 import Context from './context'
 import Loader from './Loader'
-
+import Card from './components/Card'
 
 const AddTodo = React.lazy(
   () =>
@@ -56,7 +56,10 @@ function App() {
   return (
     <Context.Provider value={{ removeTodo }}>
       <div className='wrapper'>
-        <h1> My vocabulary list</h1>
+    <Card>
+    </Card>
+
+        <h2> My vocabulary list</h2>
         
 
         <React.Suspense fallback={<Loader />}>
