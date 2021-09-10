@@ -30,7 +30,7 @@ function TodoItem({ todo, index, onChange }) {
       <span className={classes.join(' ')}>
         <input
           type='checkbox'
-          checked={todo.completed}
+         
           style={styles.input}
           onChange={() => onChange(todo.id)}
         />

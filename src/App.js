@@ -56,7 +56,7 @@ function App() {
   return (
     <Context.Provider value={{ removeTodo }}>
       <div className='wrapper'>
-        <h1> My to do list</h1>
+        <h1> My vocabulary list</h1>
         
 
         <React.Suspense fallback={<Loader />}>
@@ -67,7 +67,7 @@ function App() {
         {todos.length ? (
           <TodoList todos={todos} onToggle={toggleTodo} />
         ) : loading ? null : (
-          <p>No todos!</p>
+          <p>Nothing to practice!</p>
         )}
       </div>
     </Context.Provider>
