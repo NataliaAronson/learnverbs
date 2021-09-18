@@ -1,82 +1,37 @@
-import React,{ useEffect } from 'react'
-import TodoList from './Todo/TodoList'
-import Context from './context'
-import Loader from './Loader'
-import Card from './components/Card'
+import React from 'react';
+import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
+import Navlist from './components/Navlist';
+import Home from './contents/Home';
+import Verbs from './contents/Verbs';
+import Something from './contents/Something';
+import Voclist from './components/contents/Voclist';
 
-const AddTodo = React.lazy(
-  () =>
-    new Promise(resolve => {
-      setTimeout(() => {
-        resolve(import('./Todo/AddTodo'))
-      }, 3000)
-    })
-)
+
 
 function App() {
-  const [todos, setTodos] = React.useState([])
-  const [loading, setLoading] = React.useState(true)
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
-      .then(response => response.json())
-      .then(todos => {
-        setTimeout(() => {
-          setTodos(todos)
-          setLoading(false)
-        }, 2000)
-      })
-  }, [])
-
-  function toggleTodo(id) {
-    setTodos(
-      todos.map(todo => {
-        
-        return todo
-      })
-    )
-  }
-
-  function removeTodo(id) {
-    setTodos(todos.filter(todo => todo.id !== id))
-  }
-
-  function addTodo(title) {
-    setTodos(
-      todos.concat([
-        {
-          title,
-          id: Date.now(),
-          completed: false
-        }
-      ])
-    )
-  }
-
   return (
-    <Context.Provider value={{ removeTodo }}>
-      <div className='wrapper'>
-    <Card
-    frontSide = "делать"
-    backSide ="do, did, done">
-    </Card>
-
-        <h2> My vocabulary list</h2>
-        
-
-        <React.Suspense fallback={<Loader />}>
-          <AddTodo onCreate={addTodo} />
-        </React.Suspense>
-
-        {loading && <Loader />}
-        {todos.length ? (
-          <TodoList todos={todos} onToggle={toggleTodo} />
-        ) : loading ? null : (
-          <p>Nothing to practice!</p>
-        )}
-      </div>
-    </Context.Provider>
-  )
-}
-
-export default App
+    <Router>
+    <div className="App">
+    <Navlist />
+    <Route exact path="/">
+    <Home/>
+    </Route>
+    <Route path="/voclist">
+    <Voclist />
+    </Route>
+    <Route path="/verbs">
+    <Verbs />
+    </Route>
+    <Route path="/something">
+    <Something />
+    </Route>
+    </div>
+    </Router>
+    );
+  }
+  
+  export default App;
