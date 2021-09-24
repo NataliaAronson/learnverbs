@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Verbcard from '../components/Verbcard';
-
+import Verbcard from '../Verbcard';
 class Verbs extends Component {
     render() {
         return (

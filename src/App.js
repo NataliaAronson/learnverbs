@@ -4,13 +4,12 @@ import {
   BrowserRouter as Router,
   Route,
 } from "react-router-dom";
+
 import Navlist from './components/Navlist';
-import Home from './contents/Home';
-import Verbs from './contents/Verbs';
-import Something from './contents/Something';
+import Home from './components/contents/Home';
+import Verbs from './components/contents/Verbs';
+import Something from './components/contents/Something';
 import Voclist from './components/contents/Voclist';
-
-
 
 function App() {
   return (
