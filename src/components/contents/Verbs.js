@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Verbcard from '../Verbcard';
+import VerbsCard from '.verbcard/VerbsCard';
 class Verbs extends Component {
     render() {
         return (
             <div className="condiv">
             <h1 className="subtopic">Irregular verbs</h1>
-            <Verbcard />
+            <VerbsCard />
            
             </div>
             )

@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import Navlist from './components/Navlist';
+import Navlist from './components/nav/Navlist';
 import Home from './components/contents/Home';
 import Verbs from './components/contents/Verbs';
 import Something from './components/contents/Something';
